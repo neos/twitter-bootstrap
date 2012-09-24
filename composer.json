@@ -1,0 +1,14 @@
+{
+    "name": "twitter/bootstrap",
+    "type": "flow3-package",
+    "description": "Simple and flexible HTML, CSS, and Javascript for popular user interface components and interactions.",
+    "version": "2.1.1",
+    "require": {
+        "typo3/flow3": "*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Twitter\\Bootstrap": "Classes"
+        }
+    }
+}

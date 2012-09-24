@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://typo3.org/ns/2008/flow3/package" version="1.0">
-	<key>Twitter.Bootstrap</key>
-	<title>Bootstrap, from Twitter</title>
-	<description>Simple and flexible HTML, CSS, and Javascript for popular user interface components and interactions.</description>
-	<version>2.1.1</version>
-</package>
