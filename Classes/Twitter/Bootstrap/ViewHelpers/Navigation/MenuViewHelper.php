@@ -2,15 +2,15 @@
 namespace Twitter\Bootstrap\ViewHelpers\Navigation;
 
 /*                                                                        *
- * This script belongs to the FLOW3 package "Twitter.Bootstrap".          *
+ * This script belongs to the TYPO3 Flow package "Twitter.Bootstrap".     *
  *                                                                        *
  *                                                                        */
 
-use TYPO3\FLOW3\Annotations as FLOW3;
+use TYPO3\Flow\Annotations as Flow;
 
 /**
  *
- * @FLOW3\Scope("prototype")
+ * @Flow\Scope("prototype")
  */
 class MenuViewHelper extends \Twitter\Bootstrap\ViewHelpers\AbstractComponentViewHelper {
 

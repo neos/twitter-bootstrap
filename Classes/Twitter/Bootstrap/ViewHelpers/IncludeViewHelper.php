@@ -2,21 +2,21 @@
 namespace Twitter\Bootstrap\ViewHelpers;
 
 /*                                                                        *
- * This script belongs to the FLOW3 package "Twitter.Bootstrap".          *
+ * This script belongs to the TYPO3 Flow package "Twitter.Bootstrap".     *
  *                                                                        *
  *                                                                        */
 
-use TYPO3\FLOW3\Annotations as FLOW3;
+use TYPO3\Flow\Annotations as Flow;
 
 /**
  *
- * @FLOW3\Scope("prototype")
+ * @Flow\Scope("prototype")
  */
 class IncludeViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper {
 
 	/**
-	 * @var \TYPO3\FLOW3\Resource\Publishing\ResourcePublisher
-	 * @FLOW3\Inject
+	 * @var \TYPO3\Flow\Resource\Publishing\ResourcePublisher
+	 * @Flow\Inject
 	 */
 	protected $resourcePublisher;
 
