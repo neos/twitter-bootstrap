@@ -21,7 +21,8 @@ class IncludeViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper 
 	protected $resourcePublisher;
 
 	/**
-	 * Get the header include code for including Twitter Bootstrap on a page
+	 * Get the header include code for including Twitter Bootstrap on a page. If needed
+	 * the jQuery library can be included, too.
 	 *
 	 * Example usage:
 	 * {namespace bootstrap=Twitter\Bootstrap\ViewHelpers}
@@ -29,15 +30,28 @@ class IncludeViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper 
 	 *
 	 * @param string $version
 	 * @param boolean $minified
+	 * @param boolean $includeJQuery
 	 * @return string
 	 */
-	public function render($version = '2', $minified = TRUE) {
-		return sprintf(
-			'<link rel="stylesheet" type="text/css" href="%s" /><script type="text/javascript" src="%s"></script>',
-			$this->resourcePublisher->getStaticResourcesWebBaseUri() . 'Packages/Twitter.Bootstrap/' . $version . '/css/bootstrap' . ($minified === TRUE ? '.min' : '') . '.css',
+	public function render($version = '2', $minified = TRUE, $includeJQuery = FALSE) {
+		$content = sprintf(
+			'<link rel="stylesheet" href="%s" />' . PHP_EOL,
+			$this->resourcePublisher->getStaticResourcesWebBaseUri() . 'Packages/Twitter.Bootstrap/' . $version . '/css/bootstrap' . ($minified === TRUE ? '.min' : '') . '.css'
+		);
+
+		if ($includeJQuery === TRUE) {
+			$content .= sprintf(
+				'<script src="%s"></script>' . PHP_EOL,
+				$this->resourcePublisher->getStaticResourcesWebBaseUri() . 'Packages/Twitter.Bootstrap/Libraries/jQuery/jquery-1.8.2' . ($minified === TRUE ? '.min' : '') . '.js'
+			);
+		}
+
+		$content .= sprintf(
+			'<script src="%s"></script>' . PHP_EOL,
 			$this->resourcePublisher->getStaticResourcesWebBaseUri() . 'Packages/Twitter.Bootstrap/' . $version . '/js/bootstrap' . ($minified === TRUE ? '.min' : '') . '.js'
 		);
-	}
 
+		return $content;
+	}
 }
 ?>
