@@ -84,6 +84,26 @@ First you have to define your menu items in your controller and hand that array 
 	));
 
 
+Add icons to your menu items
+----------------------------
+
+If your menu items should show a nice icon next to them, you can use the Bootstrap Glyphicons for this. Just define an iconClass for a menu item and it will be shown right in front of the menu item::
+
+	$navigationArray = array(
+		'id' => 'navProjects',
+		'label' => 'Projects',
+		'iconClass' => 'icon-folder-open',
+		'invertIcon' => TRUE
+	);
+
+You can find a list of all available icons and their class name at http://twitter.github.com/bootstrap/base-css.html#icons
+
+Setting invertIcon to TRUE will show them in white instead of black.
+
+
+Adding the navigation items to all views
+----------------------------------------
+
 In case you want to have the same array globally for all actions, you can put the above array declaration like this::
 
 	/**
