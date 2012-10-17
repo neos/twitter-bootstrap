@@ -1,10 +1,10 @@
 <?php
-namespace Twitter\Bootstrap\ViewHelpers\Navigation;
+namespace TYPO3\Twitter\Bootstrap\ViewHelpers\Navigation;
 
-/*                                                                        *
- * This script belongs to the TYPO3 Flow package "Twitter.Bootstrap".     *
- *                                                                        *
- *                                                                        */
+/*                                                                           *
+ * This script belongs to the TYPO3 Flow package "TYPO3.Twitter.Bootstrap".  *
+ *                                                                           *
+ *                                                                           */
 
 use TYPO3\Flow\Annotations as Flow;
 
@@ -12,7 +12,7 @@ use TYPO3\Flow\Annotations as Flow;
  *
  * @Flow\Scope("prototype")
  */
-class MenuViewHelper extends \Twitter\Bootstrap\ViewHelpers\AbstractComponentViewHelper {
+class MenuViewHelper extends \TYPO3\Twitter\Bootstrap\ViewHelpers\AbstractComponentViewHelper {
 
 	/**
 	 * @var array

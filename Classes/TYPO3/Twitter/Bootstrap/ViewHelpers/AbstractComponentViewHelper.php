@@ -1,10 +1,10 @@
 <?php
-namespace Twitter\Bootstrap\ViewHelpers;
+namespace TYPO3\Twitter\Bootstrap\ViewHelpers;
 
-/*                                                                        *
- * This script belongs to the TYPO3 Flow package "Twitter.Bootstrap".     *
- *                                                                        *
- *                                                                        */
+/*                                                                           *
+ * This script belongs to the TYPO3 Flow package "TYPO3.Twitter.Bootstrap".  *
+ *                                                                           *
+ *                                                                           */
 
 use TYPO3\Flow\Annotations as Flow;
 
