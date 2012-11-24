@@ -6,7 +6,7 @@
 				<f:if condition="{item.iconClass}">
 					<i class="{item.iconClass} {f:if(condition: item.invertIcon, then: 'icon-white')}">&nbsp;</i>
 				</f:if>
-				{item.label}<b class="caret"></b>
+				{item.label} <b class="caret"></b>
 			</a>
 			<bootstrap:navigation.menu items="{item.items}" classNames="{0: 'dropdown-menu'}" />
 		</li>
@@ -17,7 +17,7 @@
 				<f:if condition="{item.iconClass}">
 					<i class="{item.iconClass} {f:if(condition: item.invertIcon, then: 'icon-white')}">&nbsp;</i>
 				</f:if>
-				{item.label}
+				{item.label -> f:format.htmlentitiesDecode()}
 			</a>
 		</li>
 	</f:else>
