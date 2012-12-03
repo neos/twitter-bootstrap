@@ -46,6 +46,42 @@ in your Fluid Template::
 	<link href="{f:uri.resource(path: '2/css/bootstrap.min.css', package: 'TYPO3.Twitter.Bootstrap')}" media="screen" rel="stylesheet" type="text/css" />
 	<script type="text/javascript" src="{f:uri.resource(path: '2/js/bootstrap.min.js', package: 'TYPO3.Twitter.Bootstrap')}"></script>
 
+Rendering Bootstrap-Styled FlashMessages
+========================================
+
+The FlashMessage-ViewHelper that ships with Fluid is fine, but the rendered FlashMessages are not rendered in the
+"correct" HTML so that the Bootstrap CSS would make them nice and shiny. To get properly styled FlashMessages, use
+the example Fluid-Snippet below by putting it in a partial within your own package (Note: At the moment, it's not
+possible to access partials from within another package directly)::
+
+	<f:flashMessages as="flashMessages">
+		<f:for each="{flashMessages}" as="flashMessage">
+			<f:if condition="{0: flashMessage.severity} == {0: 'OK'}">
+				<div class="alert alert-success">
+			</f:if>
+			<f:if condition="{0: flashMessage.severity} == {0: 'Notice'}">
+				<div class="alert alert-notice">
+			</f:if>
+			<f:if condition="{0: flashMessage.severity} == {0: 'Warning'}">
+				<div class="alert alert-warning">
+			</f:if>
+			<f:if condition="{0: flashMessage.severity} == {0: 'Error'}">
+				<div class="alert alert-error">
+			</f:if>
+			<a class="close" data-dismiss="alert" href="#">×</a>
+			<f:if condition="{flashMessage.title}">
+				<h4 class="alert-heading">{flashMessage.title}</h4>
+			</f:if>
+				{flashMessage}
+			</div>
+		</f:for>
+	</f:flashMessages>
+
+Given you put the above code to Resources/Private/Partials/FlashMessages.html within your package, you can access
+it in your template or layout with the following line::
+
+	<f:render partial="FlashMessages" />
+
 Navigation ViewHelper
 =====================
 
