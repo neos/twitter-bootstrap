@@ -2,7 +2,7 @@
     "name": "typo3/twitter-bootstrap",
     "type": "typo3-flow-package",
     "description": "Simple and flexible HTML, CSS, and Javascript for popular user interface components and interactions. Packaged for use with TYPO3 Flow",
-    "version": "2.1.1",
+    "version": "2.2.2",
     "require": {
         "typo3/flow": "*"
     },
