@@ -56,16 +56,16 @@ possible to access partials from within another package directly)::
 
 	<f:flashMessages as="flashMessages">
 		<f:for each="{flashMessages}" as="flashMessage">
-			<f:if condition="{0: flashMessage.severity} == {0: 'OK'}">
+			<f:if condition="{flashMessage.severity} == 'OK'">
 				<div class="alert alert-success">
 			</f:if>
-			<f:if condition="{0: flashMessage.severity} == {0: 'Notice'}">
+			<f:if condition="{flashMessage.severity} == 'Notice'">
 				<div class="alert alert-notice">
 			</f:if>
-			<f:if condition="{0: flashMessage.severity} == {0: 'Warning'}">
+			<f:if condition="{flashMessage.severity} == 'Warning'">
 				<div class="alert alert-warning">
 			</f:if>
-			<f:if condition="{0: flashMessage.severity} == {0: 'Error'}">
+			<f:if condition="{flashMessage.severity} == 'Error'">
 				<div class="alert alert-error">
 			</f:if>
 			<a class="close" data-dismiss="alert" href="#">×</a>
