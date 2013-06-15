@@ -31,9 +31,10 @@ class IncludeViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper 
 	 * @param string $version
 	 * @param boolean $minified
 	 * @param boolean $includeJQuery
+	 * @param string $jQueryVersion
 	 * @return string
 	 */
-	public function render($version = '2', $minified = TRUE, $includeJQuery = FALSE) {
+	public function render($version = '2', $minified = TRUE, $includeJQuery = FALSE, $jQueryVersion = '1.8.2') {
 		$content = sprintf(
 			'<link rel="stylesheet" href="%s" />' . PHP_EOL,
 			$this->resourcePublisher->getStaticResourcesWebBaseUri() . 'Packages/TYPO3.Twitter.Bootstrap/' . $version . '/css/bootstrap' . ($minified === TRUE ? '.min' : '') . '.css'
@@ -42,7 +43,7 @@ class IncludeViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper 
 		if ($includeJQuery === TRUE) {
 			$content .= sprintf(
 				'<script src="%s"></script>' . PHP_EOL,
-				$this->resourcePublisher->getStaticResourcesWebBaseUri() . 'Packages/TYPO3.Twitter.Bootstrap/Libraries/jQuery/jquery-1.8.2' . ($minified === TRUE ? '.min' : '') . '.js'
+				$this->resourcePublisher->getStaticResourcesWebBaseUri() . 'Packages/TYPO3.Twitter.Bootstrap/Libraries/jQuery/jquery-' . $jQueryVersion . ($minified === TRUE ? '.min' : '') . '.js'
 			);
 		}
 
