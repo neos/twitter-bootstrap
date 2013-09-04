@@ -34,7 +34,7 @@ class IncludeViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper 
 	 * @param string $jQueryVersion
 	 * @return string
 	 */
-	public function render($version = '2', $minified = TRUE, $includeJQuery = FALSE, $jQueryVersion = '1.8.2') {
+	public function render($version = '3', $minified = TRUE, $includeJQuery = FALSE, $jQueryVersion = '1.10.1') {
 		$content = sprintf(
 			'<link rel="stylesheet" href="%s" />' . PHP_EOL,
 			$this->resourcePublisher->getStaticResourcesWebBaseUri() . 'Packages/TYPO3.Twitter.Bootstrap/' . $version . '/css/bootstrap' . ($minified === TRUE ? '.min' : '') . '.css'
