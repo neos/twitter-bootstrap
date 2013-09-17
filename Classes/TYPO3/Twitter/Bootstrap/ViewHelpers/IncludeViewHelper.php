@@ -28,13 +28,13 @@ class IncludeViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper 
 	 * {namespace bootstrap=TYPO3\Twitter\Bootstrap\ViewHelpers}
 	 * <bootstrap:include />
 	 *
-	 * @param string $version
-	 * @param boolean $minified
-	 * @param boolean $includeJQuery
-	 * @param string $jQueryVersion
+	 * @param string $version The version to use, for example "2.2", "3.0" or also "2" or "3" meaning "2.x" and "3.x" respectively
+	 * @param boolean $minified If the minified version of Twitter Bootstrap should be used
+	 * @param boolean $includeJQuery If enabled, also includes jQuery
+	 * @param string $jQueryVersion The jQuery version to include
 	 * @return string
 	 */
-	public function render($version = '3', $minified = TRUE, $includeJQuery = FALSE, $jQueryVersion = '1.10.1') {
+	public function render($version, $minified = TRUE, $includeJQuery = FALSE, $jQueryVersion = '1.10.1') {
 		$content = sprintf(
 			'<link rel="stylesheet" href="%s" />' . PHP_EOL,
 			$this->resourcePublisher->getStaticResourcesWebBaseUri() . 'Packages/TYPO3.Twitter.Bootstrap/' . $version . '/css/bootstrap' . ($minified === TRUE ? '.min' : '') . '.css'
