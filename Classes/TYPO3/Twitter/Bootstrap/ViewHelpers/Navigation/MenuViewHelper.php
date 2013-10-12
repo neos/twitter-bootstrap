@@ -47,4 +47,3 @@ class MenuViewHelper extends \TYPO3\Twitter\Bootstrap\ViewHelpers\AbstractCompon
 	}
 
 }
-?>
