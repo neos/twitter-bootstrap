@@ -1,6 +1,6 @@
-============================================
+==================================================
 TYPO3.Twitter.Bootstrap - packaged as Flow Package
-============================================
+==================================================
 
 Description
 ===========
@@ -28,9 +28,8 @@ Options
 You can further tweak, what exactly and how Bootstrap is included by adding parameters from the following list:
 
 version:
-	defaults to "2" which means the most current version of 2.x.x from Bootstrap is included, should be pinned to a
-	specific branch by using e.g. "2.1" which will include the latest version of 2.1.x (use the default with care -
-	since the default will automatically be updated to the most current major version)
+	If set to "3" the most current version of 3.x.x from Bootstrap is included. It could be pinned to a
+	specific branch by using e.g. "2.1" which will include the latest version of 2.1.x
 minified:
 	defaults to "TRUE", can be set to "FALSE" to get the original files included during development
 includeJQuery:
