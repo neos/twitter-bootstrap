@@ -148,7 +148,7 @@ In case you want to have the same array globally for all actions, you can put th
 	public function initializeView(\TYPO3\Flow\Mvc\View\ViewInterface $view) {
 			// Declare navigation items, will be available in all views from all actions if not overridden
 		$navigationItems = array(PUT_YOUR_ITEMS_HERE);
-		$view->assign($navigationItems);
+		$view->assign('navigationItems', $navigationItems);
 	}
 
 Add the view helper to your layout
