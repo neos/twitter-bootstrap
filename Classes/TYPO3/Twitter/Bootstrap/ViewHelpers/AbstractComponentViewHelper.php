@@ -12,7 +12,7 @@ use TYPO3\Flow\Annotations as Flow;
  *
  * @Flow\Scope("prototype")
  */
-class AbstractComponentViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper {
+class AbstractComponentViewHelper extends \Neos\FluidAdaptor\Core\ViewHelper\AbstractViewHelper {
 
 	/**
 	 * @var array
@@ -30,10 +30,10 @@ class AbstractComponentViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractV
 	/**
 	 * Get a StandaloneView used for rendering the component
 	 *
-	 * @return \TYPO3\Fluid\View\StandaloneView
+	 * @return \Neos\FluidAdaptor\View\StandaloneView
 	 */
 	protected function getView() {
-		$view = new \TYPO3\Fluid\View\StandaloneView($this->controllerContext->getRequest());
+		$view = new \Neos\FluidAdaptor\View\StandaloneView($this->controllerContext->getRequest());
 		if (is_file($this->settings['viewHelpers']['templates'][get_class($this)])) {
 			$view->setPartialRootPath($this->settings['viewHelpers']['partialRootPath']);
 			$view->setTemplatePathAndFilename($this->settings['viewHelpers']['templates'][get_class($this)]);
