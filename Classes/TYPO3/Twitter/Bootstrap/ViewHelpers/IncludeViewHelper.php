@@ -15,7 +15,7 @@ use TYPO3\Flow\Annotations as Flow;
 class IncludeViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper {
 
 	/**
-	 * @var \TYPO3\Flow\Resource\ResourceManager
+	 * @var \TYPO3\Flow\ResourceManagement\ResourceManager
 	 * @Flow\Inject
 	 */
 	protected $resourceManager;
