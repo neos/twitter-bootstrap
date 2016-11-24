@@ -1,8 +1,8 @@
 <?php
-namespace TYPO3\Twitter\Bootstrap\ViewHelpers\Navigation;
+namespace Neos\Twitter\Bootstrap\ViewHelpers;
 
 /*                                                                           *
- * This script belongs to the TYPO3 Flow package "TYPO3.Twitter.Bootstrap".  *
+ * This script belongs to the TYPO3 Flow package "Neos\Twitter.Bootstrap".  *
  *                                                                           *
  *                                                                           */
 
@@ -12,7 +12,7 @@ use Neos\Flow\Annotations as Flow;
  *
  * @Flow\Scope("prototype")
  */
-class MenuViewHelper extends \TYPO3\Twitter\Bootstrap\ViewHelpers\AbstractComponentViewHelper {
+class AbstractComponentViewHelper extends \Neos\FluidAdaptor\Core\ViewHelper\AbstractViewHelper {
 
 	
 	/**
@@ -36,22 +36,17 @@ class MenuViewHelper extends \TYPO3\Twitter\Bootstrap\ViewHelpers\AbstractCompon
 	}
 
 	/**
-	 * Render the menu
+	 * Get a StandaloneView used for rendering the component
 	 *
-	 * @param array $items
-	 * @param array $classNames
-	 * @return string
+	 * @return \Neos\FluidAdaptor\View\StandaloneView
 	 */
-	public function render(array $items, array $classNames = array('nav')) {
-		$view = $this->getView();
-
-		$view->assignMultiple(array(
-			'items' => $items,
-			'settings' => $this->settings,
-			'menuClasses' => implode(' ', $classNames)
-		));
-
-		return $view->render();
+	protected function getView() {
+		$view = new \Neos\FluidAdaptor\View\StandaloneView($this->controllerContext->getRequest());
+		if (is_file($this->settings['viewHelpers']['templates'][get_class($this)])) {
+			$view->setPartialRootPath($this->settings['viewHelpers']['partialRootPath']);
+			$view->setTemplatePathAndFilename($this->settings['viewHelpers']['templates'][get_class($this)]);
+		}
+		return $view;
 	}
 
 }

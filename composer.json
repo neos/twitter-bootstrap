@@ -1,14 +1,17 @@
 {
-    "name": "typo3/twitter-bootstrap",
-    "type": "typo3-flow-package",
+    "name": "neos/twitter-bootstrap",
+    "type": "neos-package",
     "description": "Simple and flexible HTML, CSS, and Javascript for popular user interface components and interactions. Packaged for use with TYPO3 Flow",
     "license": "Apache-2.0",
     "require": {
-        "typo3/flow": "*"
+        "neos/flow": "*"
+    },
+    "replace": {
+        "typo3/form": "self.version"
     },
     "autoload": {
-        "psr-0": {
-            "TYPO3\\Twitter\\Bootstrap": "Classes"
+        "psr-4": {
+            "Neos\\Twitter\\Bootstrap\\": "Classes"
         }
     },
     "extra": {

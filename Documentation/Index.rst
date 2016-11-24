@@ -1,5 +1,5 @@
 ==================================================
-TYPO3.Twitter.Bootstrap - packaged as Flow Package
+Neos.Twitter.Bootstrap - packaged as Flow Package
 ==================================================
 
 Description
@@ -17,7 +17,7 @@ view/template of your application.
 
 Add the namespace declaration to the top of your layout::
 
-	{namespace bootstrap=TYPO3\Twitter\Bootstrap\ViewHelpers}
+	{namespace bootstrap=Neos\Twitter\Bootstrap\ViewHelpers}
 
 Then add the following line to your <head> section at an approriate place::
 
@@ -42,8 +42,8 @@ Alternative way to include Bootstrap
 Instead of using the view helpers, you can also include the needed CSS or JavaScript files with the following lines
 in your Fluid Template::
 
-	<link href="{f:uri.resource(path: '2/css/bootstrap.min.css', package: 'TYPO3.Twitter.Bootstrap')}" media="screen" rel="stylesheet" type="text/css" />
-	<script type="text/javascript" src="{f:uri.resource(path: '2/js/bootstrap.min.js', package: 'TYPO3.Twitter.Bootstrap')}"></script>
+	<link href="{f:uri.resource(path: '2/css/bootstrap.min.css', package: 'Neos.Twitter.Bootstrap')}" media="screen" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="{f:uri.resource(path: '2/js/bootstrap.min.js', package: 'Neos.Twitter.Bootstrap')}"></script>
 
 Rendering Bootstrap-Styled FlashMessages
 ========================================
