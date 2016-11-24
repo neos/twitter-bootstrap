@@ -14,14 +14,6 @@ use Neos\Flow\Annotations as Flow;
  */
 class MenuViewHelper extends \Neos\Twitter\Bootstrap\ViewHelpers\AbstractComponentViewHelper {
 
-	
-	/**
-	 * NOTE: This property has been introduced via code migration to ensure backwards-compatibility.
-	 * @see AbstractViewHelper::isOutputEscapingEnabled()
-	 * @var boolean
-	 */
-	protected $escapeOutput = FALSE;
-
 	/**
 	 * @var array
 	 */
