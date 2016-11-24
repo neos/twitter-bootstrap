@@ -14,6 +14,14 @@ use TYPO3\Flow\Annotations as Flow;
  */
 class IncludeViewHelper extends \Neos\FluidAdaptor\Core\ViewHelper\AbstractViewHelper {
 
+	
+	/**
+	 * NOTE: This property has been introduced via code migration to ensure backwards-compatibility.
+	 * @see AbstractViewHelper::isOutputEscapingEnabled()
+	 * @var boolean
+	 */
+	protected $escapeOutput = FALSE;
+
 	/**
 	 * @var \TYPO3\Flow\ResourceManagement\ResourceManager
 	 * @Flow\Inject
