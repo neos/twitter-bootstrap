@@ -6,7 +6,7 @@ namespace TYPO3\Twitter\Bootstrap\ViewHelpers\Navigation;
  *                                                                           *
  *                                                                           */
 
-use TYPO3\Flow\Annotations as Flow;
+use Neos\Flow\Annotations as Flow;
 
 /**
  *

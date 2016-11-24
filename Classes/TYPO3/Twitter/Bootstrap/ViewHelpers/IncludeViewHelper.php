@@ -6,7 +6,7 @@ namespace TYPO3\Twitter\Bootstrap\ViewHelpers;
  *                                                                           *
  *                                                                           */
 
-use TYPO3\Flow\Annotations as Flow;
+use Neos\Flow\Annotations as Flow;
 
 /**
  *
@@ -23,7 +23,7 @@ class IncludeViewHelper extends \Neos\FluidAdaptor\Core\ViewHelper\AbstractViewH
 	protected $escapeOutput = FALSE;
 
 	/**
-	 * @var \TYPO3\Flow\ResourceManagement\ResourceManager
+	 * @var \Neos\Flow\ResourceManagement\ResourceManager
 	 * @Flow\Inject
 	 */
 	protected $resourceManager;
