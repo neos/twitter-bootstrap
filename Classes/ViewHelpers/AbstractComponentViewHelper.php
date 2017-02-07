@@ -12,38 +12,40 @@ namespace Neos\Twitter\Bootstrap\ViewHelpers;
  */
 
 use Neos\Flow\Annotations as Flow;
+use Neos\FluidAdaptor\Core\ViewHelper\AbstractViewHelper;
+use Neos\FluidAdaptor\View\StandaloneView;
 
 /**
- *
- * @Flow\Scope("prototype")
+ * Abstract Component View Helper
  */
-class AbstractComponentViewHelper extends \Neos\FluidAdaptor\Core\ViewHelper\AbstractViewHelper {
+class AbstractComponentViewHelper extends AbstractViewHelper
+{
+    /**
+     * @var array
+     */
+    protected $settings;
 
-	/**
-	 * @var array
-	 */
-	protected $settings;
+    /**
+     * @param array $settings
+     * @return void
+     */
+    public function injectSettings(array $settings)
+    {
+        $this->settings = $settings;
+    }
 
-	/**
-	 * @param array $settings
-	 * @return void
-	 */
-	public function injectSettings(array $settings) {
-		$this->settings = $settings;
-	}
-
-	/**
-	 * Get a StandaloneView used for rendering the component
-	 *
-	 * @return \Neos\FluidAdaptor\View\StandaloneView
-	 */
-	protected function getView() {
-		$view = new \Neos\FluidAdaptor\View\StandaloneView($this->controllerContext->getRequest());
-		if (is_file($this->settings['viewHelpers']['templates'][get_class($this)])) {
-			$view->setPartialRootPath($this->settings['viewHelpers']['partialRootPath']);
-			$view->setTemplatePathAndFilename($this->settings['viewHelpers']['templates'][get_class($this)]);
-		}
-		return $view;
-	}
-
+    /**
+     * Get a StandaloneView used for rendering the component
+     *
+     * @return StandaloneView
+     */
+    protected function getView()
+    {
+        $view = new StandaloneView($this->controllerContext->getRequest());
+        if (is_file($this->settings['viewHelpers']['templates'][get_class($this)])) {
+            $view->setPartialRootPath($this->settings['viewHelpers']['partialRootPath']);
+            $view->setTemplatePathAndFilename($this->settings['viewHelpers']['templates'][get_class($this)]);
+        }
+        return $view;
+    }
 }

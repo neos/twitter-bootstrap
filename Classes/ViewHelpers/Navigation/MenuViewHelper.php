@@ -12,43 +12,45 @@ namespace Neos\Twitter\Bootstrap\ViewHelpers\Navigation;
  */
 
 use Neos\Flow\Annotations as Flow;
+use Neos\Twitter\Bootstrap\ViewHelpers\AbstractComponentViewHelper;
 
 /**
  *
  * @Flow\Scope("prototype")
  */
-class MenuViewHelper extends \Neos\Twitter\Bootstrap\ViewHelpers\AbstractComponentViewHelper {
+class MenuViewHelper extends AbstractComponentViewHelper
+{
+    /**
+     * @var array
+     */
+    protected $settings;
 
-	/**
-	 * @var array
-	 */
-	protected $settings;
+    /**
+     * @param array $settings
+     * @return void
+     */
+    public function injectSettings(array $settings)
+    {
+        $this->settings = $settings;
+    }
 
-	/**
-	 * @param array $settings
-	 * @return void
-	 */
-	public function injectSettings(array $settings) {
-		$this->settings = $settings;
-	}
+    /**
+     * Render the menu
+     *
+     * @param array $items
+     * @param array $classNames
+     * @return string
+     */
+    public function render(array $items, array $classNames = array('nav'))
+    {
+        $view = $this->getView();
 
-	/**
-	 * Render the menu
-	 *
-	 * @param array $items
-	 * @param array $classNames
-	 * @return string
-	 */
-	public function render(array $items, array $classNames = array('nav')) {
-		$view = $this->getView();
+        $view->assignMultiple(array(
+            'items' => $items,
+            'settings' => $this->settings,
+            'menuClasses' => implode(' ', $classNames)
+        ));
 
-		$view->assignMultiple(array(
-			'items' => $items,
-			'settings' => $this->settings,
-			'menuClasses' => implode(' ', $classNames)
-		));
-
-		return $view->render();
-	}
-
+        return $view->render();
+    }
 }
