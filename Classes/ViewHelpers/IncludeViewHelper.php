@@ -42,19 +42,19 @@ class IncludeViewHelper extends \Neos\FluidAdaptor\Core\ViewHelper\AbstractViewH
 	public function render($version, $minified = TRUE, $includeJQuery = FALSE, $jQueryVersion = '1.10.1') {
 		$content = sprintf(
 			'<link rel="stylesheet" href="%s" />' . PHP_EOL,
-			$this->resourceManager->getPublicPackageResourceUri('Neos\Twitter.Bootstrap', $version . '/css/bootstrap' . ($minified === TRUE ? '.min' : '') . '.css')
+			$this->resourceManager->getPublicPackageResourceUri('Neos.Twitter.Bootstrap', $version . '/css/bootstrap' . ($minified === TRUE ? '.min' : '') . '.css')
 		);
 
 		if ($includeJQuery === TRUE) {
 			$content .= sprintf(
 				'<script src="%s"></script>' . PHP_EOL,
-				$this->resourceManager->getPublicPackageResourceUri('Neos\Twitter.Bootstrap', 'Libraries/jQuery/jquery-' . $jQueryVersion . ($minified === TRUE ? '.min' : '') . '.js')
+				$this->resourceManager->getPublicPackageResourceUri('Neos.Twitter.Bootstrap', 'Libraries/jQuery/jquery-' . $jQueryVersion . ($minified === TRUE ? '.min' : '') . '.js')
 			);
 		}
 
 		$content .= sprintf(
 			'<script src="%s"></script>' . PHP_EOL,
-				$this->resourceManager->getPublicPackageResourceUri('Neos\Twitter.Bootstrap', $version . '/js/bootstrap' . ($minified === TRUE ? '.min' : '') . '.js')
+				$this->resourceManager->getPublicPackageResourceUri('Neos.Twitter.Bootstrap', $version . '/js/bootstrap' . ($minified === TRUE ? '.min' : '') . '.js')
 		);
 
 		return $content;
