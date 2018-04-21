@@ -4,7 +4,7 @@
     "description": "Simple and flexible HTML, CSS, and Javascript for popular user interface components and interactions. Packaged for use with Neos Flow",
     "license": "MIT",
     "require": {
-        "neos/flow": "~4.0 || dev-master"
+        "neos/flow": ">=4.0 <6.0 || dev-master"
     },
     "replace": {
         "typo3/twitter-bootstrap": "self.version"
