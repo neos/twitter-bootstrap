@@ -11,7 +11,6 @@ namespace Neos\Twitter\Bootstrap\ViewHelpers;
  * source code.
  */
 
-use Neos\Flow\Annotations as Flow;
 use Neos\FluidAdaptor\Core\ViewHelper\AbstractViewHelper;
 use Neos\FluidAdaptor\View\StandaloneView;
 

@@ -21,35 +21,32 @@ use Neos\Twitter\Bootstrap\ViewHelpers\AbstractComponentViewHelper;
 class MenuViewHelper extends AbstractComponentViewHelper
 {
     /**
-     * @var array
-     */
-    protected $settings;
-
-    /**
-     * @param array $settings
+     * Initialize the arguments.
+     *
      * @return void
+     * @throws \Neos\FluidAdaptor\Core\ViewHelper\Exception
      */
-    public function injectSettings(array $settings)
+    public function initializeArguments()
     {
-        $this->settings = $settings;
+        parent::initializeArguments();
+        $this->registerArgument('items', 'array', 'Items to render', true);
+        $this->registerArgument('classNames', 'array', 'CSS classes to add to the menu', false, ['nav']);
     }
 
     /**
      * Render the menu
      *
-     * @param array $items
-     * @param array $classNames
      * @return string
      */
-    public function render(array $items, array $classNames = array('nav'))
+    public function render(): string
     {
         $view = $this->getView();
 
-        $view->assignMultiple(array(
-            'items' => $items,
+        $view->assignMultiple([
+            'items' => $this->arguments['items'],
             'settings' => $this->settings,
-            'menuClasses' => implode(' ', $classNames)
-        ));
+            'menuClasses' => implode(' ', $this->arguments['classNames'])
+        ]);
 
         return $view->render();
     }
