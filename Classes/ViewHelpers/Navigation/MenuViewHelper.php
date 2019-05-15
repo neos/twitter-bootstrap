@@ -35,20 +35,31 @@ class MenuViewHelper extends AbstractComponentViewHelper
     }
 
     /**
+     * Initialize the arguments.
+     *
+     * @return void
+     * @throws \Neos\FluidAdaptor\Core\ViewHelper\Exception
+     */
+    public function initializeArguments()
+    {
+        parent::initializeArguments();
+        $this->registerArgument('items', 'array', 'Items to render', true);
+        $this->registerArgument('classNames', 'array', 'CSS classes to add to the menu', false, ['nav']);
+    }
+
+    /**
      * Render the menu
      *
-     * @param array $items
-     * @param array $classNames
      * @return string
      */
-    public function render(array $items, array $classNames = array('nav'))
+    public function render(): string
     {
         $view = $this->getView();
 
         $view->assignMultiple(array(
-            'items' => $items,
+            'items' => $this->arguments['items'],
             'settings' => $this->settings,
-            'menuClasses' => implode(' ', $classNames)
+            'menuClasses' => implode(' ', $this->arguments['classNames'])
         ));
 
         return $view->render();
