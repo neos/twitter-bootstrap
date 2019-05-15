@@ -21,20 +21,6 @@ use Neos\Twitter\Bootstrap\ViewHelpers\AbstractComponentViewHelper;
 class MenuViewHelper extends AbstractComponentViewHelper
 {
     /**
-     * @var array
-     */
-    protected $settings;
-
-    /**
-     * @param array $settings
-     * @return void
-     */
-    public function injectSettings(array $settings)
-    {
-        $this->settings = $settings;
-    }
-
-    /**
      * Initialize the arguments.
      *
      * @return void
@@ -56,11 +42,11 @@ class MenuViewHelper extends AbstractComponentViewHelper
     {
         $view = $this->getView();
 
-        $view->assignMultiple(array(
+        $view->assignMultiple([
             'items' => $this->arguments['items'],
             'settings' => $this->settings,
             'menuClasses' => implode(' ', $this->arguments['classNames'])
-        ));
+        ]);
 
         return $view->render();
     }

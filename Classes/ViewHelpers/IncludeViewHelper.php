@@ -12,6 +12,7 @@ namespace Neos\Twitter\Bootstrap\ViewHelpers;
  */
 
 use Neos\Flow\Annotations as Flow;
+use Neos\Flow\ResourceManagement\ResourceManager;
 use Neos\FluidAdaptor\Core\ViewHelper\AbstractViewHelper;
 
 /**
@@ -20,7 +21,7 @@ use Neos\FluidAdaptor\Core\ViewHelper\AbstractViewHelper;
 class IncludeViewHelper extends AbstractViewHelper
 {
     /**
-     * @var \Neos\Flow\ResourceManagement\ResourceManager
+     * @var ResourceManager
      * @Flow\Inject
      */
     protected $resourceManager;
@@ -63,19 +64,19 @@ class IncludeViewHelper extends AbstractViewHelper
 
         $content = sprintf(
             '<link rel="stylesheet" href="%s" />' . PHP_EOL,
-            $this->resourceManager->getPublicPackageResourceUri('Neos.Twitter.Bootstrap', $version . '/css/bootstrap' . ($minified === TRUE ? '.min' : '') . '.css')
+            $this->resourceManager->getPublicPackageResourceUri('Neos.Twitter.Bootstrap', $version . '/css/bootstrap' . ($minified === true ? '.min' : '') . '.css')
         );
 
         if ($this->arguments['includeJQuery'] === true) {
             $content .= sprintf(
                 '<script src="%s"></script>' . PHP_EOL,
-                $this->resourceManager->getPublicPackageResourceUri('Neos.Twitter.Bootstrap', 'Libraries/jQuery/jquery-' . $jQueryVersion . ($minified === TRUE ? '.min' : '') . '.js')
+                $this->resourceManager->getPublicPackageResourceUri('Neos.Twitter.Bootstrap', 'Libraries/jQuery/jquery-' . $jQueryVersion . ($minified === true ? '.min' : '') . '.js')
             );
         }
 
         $content .= sprintf(
             '<script src="%s"></script>' . PHP_EOL,
-            $this->resourceManager->getPublicPackageResourceUri('Neos.Twitter.Bootstrap', $version . '/js/bootstrap' . ($minified === TRUE ? '.min' : '') . '.js')
+            $this->resourceManager->getPublicPackageResourceUri('Neos.Twitter.Bootstrap', $version . '/js/bootstrap' . ($minified === true ? '.min' : '') . '.js')
         );
 
         return $content;
